@@ -1,13 +1,13 @@
 <div align="center">
 
-# CC Switch
+# CC Switch Fusion
 
 ### Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw、Hermes Agent のオールインワン管理ツール
 
-[![Version](https://img.shields.io/github/v/release/farion1231/cc-switch?color=blue&label=version)](https://github.com/farion1231/cc-switch/releases)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/farion1231/cc-switch/releases)
+[![Version](https://img.shields.io/github/v/release/deanli1982/CC-Switch-Fusion?color=blue&label=version)](https://github.com/deanli1982/CC-Switch-Fusion/releases)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/deanli1982/CC-Switch-Fusion/releases)
 [![Built with Tauri](https://img.shields.io/badge/built%20with-Tauri%202-orange.svg)](https://tauri.app/)
-[![Downloads](https://img.shields.io/github/downloads/farion1231/cc-switch/total)](https://github.com/farion1231/cc-switch/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/deanli1982/CC-Switch-Fusion/total)](https://github.com/deanli1982/CC-Switch-Fusion/releases/latest)
 
 <a href="https://trendshift.io/repositories/15372" target="_blank"><img src="https://trendshift.io/api/badge/repositories/15372" alt="farion1231%2Fcc-switch | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
@@ -40,7 +40,7 @@ MiniMax-M2.7 は、自律的進化と実世界の生産性向上のために設�
 
 <tr>
 <td width="180"><a href="https://aigocode.com/invite/CC-SWITCH"><img src="assets/partners/logos/aigocode.png" alt="AIGoCode" width="150"></a></td>
-<td>本プロジェクトは AIGoCode のスポンサー提供でお届けしています。AIGoCode は、Claude Code・Codex・最新の Gemini モデルを統合したオールインワンのAIコーディングプラットフォームで、安定性・高速性・コストパフォーマンスに優れた開発サービスを提供します。柔軟なサブスクリプションプランを備え、レスポンスも非常に高速です。さらに、CC Switch ユーザー向けの特典として、<a href="https://aigocode.com/invite/CC-SWITCH">このリンク</a>から登録すると、初回チャージ時に10％分のボーナスクレジットが付与されます！</td>
+<td>本プロジェクトは AIGoCode のスポンサー提供でお届けしています。AIGoCode は、Claude Code・Codex・最新の Gemini モデルを統合したオールインワンのAIコーディングプラットフォームで、安定性・高速性・コストパフォーマンスに優れた開発サービスを提供します。柔軟なサブスクリプションプランを備え、レスポンスも非常に高速です。さらに、CC Switch Fusion ユーザー向けの特典として、<a href="https://aigocode.com/invite/CC-SWITCH">このリンク</a>から登録すると、初回チャージ時に10％分のボーナスクレジットが付与されます！</td>
 </tr>
 
 <tr>
@@ -51,7 +51,7 @@ MiniMax-M2.7 は、自律的進化と実世界の生産性向上のために設�
 <tr>
 <td width="180"><a href="https://www.aicodemirror.com/register?invitecode=9915W3"><img src="assets/partners/logos/aicodemirror.jpg" alt="AICodeMirror" width="150"></a></td>
 <td>AICodeMirror のご支援に感謝します！AICodeMirror は Claude Code / Codex / Gemini CLI の公式高安定リレーサービスを提供しており、エンタープライズ級の同時接続、迅速な請求書発行、24時間年中無休の専用テクニカルサポートを備えています。
-Claude Code / Codex / Gemini 公式チャンネルが最安で元価格の 38% / 2% / 9%、チャージ時にはさらに割引！AICodeMirror は CC Switch ユーザー向けに特別特典を用意：<a href="https://www.aicodemirror.com/register?invitecode=9915W3">このリンク</a>から登録すると初回チャージ 20% オフ、法人のお客様は最大 25% オフ！</td>
+Claude Code / Codex / Gemini 公式チャンネルが最安で元価格の 38% / 2% / 9%、チャージ時にはさらに割引！AICodeMirror は CC Switch Fusion ユーザー向けに特別特典を用意：<a href="https://www.aicodemirror.com/register?invitecode=9915W3">このリンク</a>から登録すると初回チャージ 20% オフ、法人のお客様は最大 25% オフ！</td>
 </tr>
 
 <tr>
@@ -73,7 +73,7 @@ Claude Code / Codex / Gemini 公式チャンネルが最安で元価格の 38% /
 
 <tr>
 <td width="180"><a href="https://cubence.com/signup?code=CCSWITCH&source=ccs"><img src="assets/partners/logos/cubence.png" alt="Cubence" width="150"></a></td>
-<td>Cubence のご支援に感謝します！Cubence は Claude Code、Codex、Gemini などのリレーサービスを提供する信頼性の高い API 中継プラットフォームで、従量課金や月額プランなど柔軟な料金体系を提供しています。CC Switch ユーザー向けの特別割引：<a href="https://cubence.com/signup?code=CCSWITCH&source=ccs">このリンク</a>で登録し、チャージ時に「CCSWITCH」クーポンを入力すると、毎回 10% オフになります！</td>
+<td>Cubence のご支援に感謝します！Cubence は Claude Code、Codex、Gemini などのリレーサービスを提供する信頼性の高い API 中継プラットフォームで、従量課金や月額プランなど柔軟な料金体系を提供しています。CC Switch Fusion ユーザー向けの特別割引：<a href="https://cubence.com/signup?code=CCSWITCH&source=ccs">このリンク</a>で登録し、チャージ時に「CCSWITCH」クーポンを入力すると、毎回 10% オフになります！</td>
 </tr>
 
 <tr>
@@ -88,27 +88,27 @@ Claude Code / Codex / Gemini 公式チャンネルが最安で元価格の 38% /
 
 <tr>
 <td width="180"><a href="https://aicoding.sh/i/CCSWITCH"><img src="assets/partners/logos/aicoding.jpg" alt="AICoding" width="150"></a></td>
-<td>AICoding.sh のご支援に感謝します！AICoding.sh —— グローバル AI モデル API 超お得な中継サービス！Claude Code 81% オフ、GPT 99% オフ！数百社の企業に高コストパフォーマンスの AI サービスを提供。Claude Code、GPT、Gemini および国内主要モデルに対応、エンタープライズ級の高同時接続、迅速な請求書発行、24 時間年中無休の専属テクニカルサポート。<a href="https://aicoding.sh/i/CCSWITCH">こちらのリンク</a>から登録した CC Switch ユーザーは、初回チャージ 10% オフ！</td>
+<td>AICoding.sh のご支援に感謝します！AICoding.sh —— グローバル AI モデル API 超お得な中継サービス！Claude Code 81% オフ、GPT 99% オフ！数百社の企業に高コストパフォーマンスの AI サービスを提供。Claude Code、GPT、Gemini および国内主要モデルに対応、エンタープライズ級の高同時接続、迅速な請求書発行、24 時間年中無休の専属テクニカルサポート。<a href="https://aicoding.sh/i/CCSWITCH">こちらのリンク</a>から登録した CC Switch Fusion ユーザーは、初回チャージ 10% オフ！</td>
 </tr>
 
 <tr>
 <td width="180"><a href="https://crazyrouter.com/register?aff=OZcm&ref=cc-switch"><img src="assets/partners/logos/crazyrouter.png" alt="Crazyrouter" width="150"></a></td>
-<td>Crazyrouter のご支援に感謝します！Crazyrouter は高性能 AI API アグリゲーションプラットフォームです。1 つの API キーで Claude Code、Codex、Gemini CLI など 300 以上のモデルにアクセス可能。全モデルが公式価格の 55% で利用でき、自動フェイルオーバー、スマートルーティング、無制限同時接続に対応。CC Switch ユーザー向けの限定特典：<a href="https://crazyrouter.com/register?aff=OZcm&ref=cc-switch">こちらのリンク</a>から登録後、カスタマーサポートまでご連絡いただくと <strong>$2 の無料クレジット</strong> を受け取れます。さらに初回チャージ時にプロモコード `CCSWITCH` を入力すると <strong>30% のボーナスクレジット</strong> が追加されます！</td>
+<td>Crazyrouter のご支援に感謝します！Crazyrouter は高性能 AI API アグリゲーションプラットフォームです。1 つの API キーで Claude Code、Codex、Gemini CLI など 300 以上のモデルにアクセス可能。全モデルが公式価格の 55% で利用でき、自動フェイルオーバー、スマートルーティング、無制限同時接続に対応。CC Switch Fusion ユーザー向けの限定特典：<a href="https://crazyrouter.com/register?aff=OZcm&ref=cc-switch">こちらのリンク</a>から登録後、カスタマーサポートまでご連絡いただくと <strong>$2 の無料クレジット</strong> を受け取れます。さらに初回チャージ時にプロモコード `CCSWITCH` を入力すると <strong>30% のボーナスクレジット</strong> が追加されます！</td>
 </tr>
 
 <tr>
 <td width="180"><a href="https://www.right.codes/register?aff=CCSWITCH"><img src="assets/partners/logos/rightcode.jpg" alt="RightCode" width="150"></a></td>
-<td>本プロジェクトへのご支援として、Right Code にご協賛いただき誠にありがとうございます。Right Code は、Claude Code、Codex、Gemini などのモデル向け中継サービスを安定して提供しており、従量課金と月額プランの 2 つの料金体系から選択できます。チャージ後に請求書の発行が可能で、法人・チームのお客様には専任担当による個別対応も行っています。さらに、CC Switch ユーザー向けの特別優待として、<a href="https://www.right.codes/register?aff=CCSWITCH">こちらのリンク</a>から登録すると、チャージのたびに実際の支払額の 5% 相当の従量課金クレジットが付与されます。</td>
+<td>本プロジェクトへのご支援として、Right Code にご協賛いただき誠にありがとうございます。Right Code は、Claude Code、Codex、Gemini などのモデル向け中継サービスを安定して提供しており、従量課金と月額プランの 2 つの料金体系から選択できます。チャージ後に請求書の発行が可能で、法人・チームのお客様には専任担当による個別対応も行っています。さらに、CC Switch Fusion ユーザー向けの特別優待として、<a href="https://www.right.codes/register?aff=CCSWITCH">こちらのリンク</a>から登録すると、チャージのたびに実際の支払額の 5% 相当の従量課金クレジットが付与されます。</td>
 </tr>
 
 <tr>
 <td width="180"><a href="https://www.sssaicode.com/register?ref=DCP0SM"><img src="assets/partners/logos/sssaicode.png" alt="SSSAiCode" width="150"></a></td>
-<td>SSSAiCode のご支援に感謝します！SSSAiCode は安定性と信頼性に優れた API 中継サービスで、安定的で信頼性が高く、手頃な価格の Claude・Codex モデルサービスを提供しています。当日の迅速な請求書発行をサポート。CC Switch ユーザー向けの特別特典：<a href="https://www.sssaicode.com/register?ref=DCP0SM">こちらのリンク</a>から登録すると、毎回のチャージで $10 の追加ボーナスを受けられます！</td>
+<td>SSSAiCode のご支援に感謝します！SSSAiCode は安定性と信頼性に優れた API 中継サービスで、安定的で信頼性が高く、手頃な価格の Claude・Codex モデルサービスを提供しています。当日の迅速な請求書発行をサポート。CC Switch Fusion ユーザー向けの特別特典：<a href="https://www.sssaicode.com/register?ref=DCP0SM">こちらのリンク</a>から登録すると、毎回のチャージで $10 の追加ボーナスを受けられます！</td>
 </tr>
 
 <tr>
 <td width="180"><a href="https://www.micuapi.ai/register?aff=aOYQ"><img src="assets/partners/logos/mikubanner.svg" alt="Micu" width="150"></a></td>
-<td>Micu API のご支援に感謝します！Micu API は、最高のコストパフォーマンスと高い安定性を追求するグローバル大規模言語モデル中継サービスプロバイダーです。法人企業がバックアップしており、サービス停止のリスクを排除、迅速な正規請求書発行に対応！「試行コストゼロ」をモットーに、最低 1 元からチャージ可能で手数料無料、いつでも返金可能！CC Switch ユーザー向けの限定特典：<a href="https://www.micuapi.ai/register?aff=aOYQ">こちらのリンク</a>から登録し、チャージ時にプロモコード「ccswitch」を入力すると <strong>10% 割引</strong> が適用されます！</td>
+<td>Micu API のご支援に感謝します！Micu API は、最高のコストパフォーマンスと高い安定性を追求するグローバル大規模言語モデル中継サービスプロバイダーです。法人企業がバックアップしており、サービス停止のリスクを排除、迅速な正規請求書発行に対応！「試行コストゼロ」をモットーに、最低 1 元からチャージ可能で手数料無料、いつでも返金可能！CC Switch Fusion ユーザー向けの限定特典：<a href="https://www.micuapi.ai/register?aff=aOYQ">こちらのリンク</a>から登録し、チャージ時にプロモコード「ccswitch」を入力すると <strong>10% 割引</strong> が適用されます！</td>
 </tr>
 <tr>
 <td width="180"><a href="https://lemondata.cc/r/FFX1ZDUP"><img src="assets/partners/logos/lemondata.png" alt="LemonData" width="150"></a></td>
@@ -134,7 +134,7 @@ Claude Code / Codex / Gemini 公式チャンネルが最安で元価格の 38% /
 <td width="180"><a href="https://ddshub.short.gy/ccswitch"><img src="assets/partners/logos/dds.png" alt="DDS" width="150"></a></td>
 <td>本プロジェクトのスポンサーである DDS に感謝いたします！ DDS（呆呆獣 / DDS Hub）は、Claude に特化した信頼性とパフォーマンスの高い API プロキシサービスです。個人および企業ユーザーの皆様に、圧倒的なコストパフォーマンスを誇る Claude 直結アクセラレーションサービスを提供しています。Claude Haiku / Opus / Sonnet などのフルスペックモデルを完全サポートし、安定した低遅延のアクセスを実現します。
 1,000人民元以上のチャージで領収書（発票）の発行が可能です。さらに、企業のお客様にはカスタマイズされたグループ管理や専用テクニカルサポートをご提供しています。
-CC Switch ユーザー限定特典： 専用リンクからご<a href="https://ddshub.short.gy/ccswitch">登録</a>いただくと、初回チャージ時に 10% の追加ボーナスクレジット をプレゼントいたします！（※チャージ完了後、グループ管理人へご連絡の上お受け取りください。）</td>
+CC Switch Fusion ユーザー限定特典： 専用リンクからご<a href="https://ddshub.short.gy/ccswitch">登録</a>いただくと、初回チャージ時に 10% の追加ボーナスクレジット をプレゼントいたします！（※チャージ完了後、グループ管理人へご連絡の上お受け取りください。）</td>
 </tr>
 
 <tr>
@@ -144,18 +144,18 @@ CC Switch ユーザー限定特典： 専用リンクからご<a href="https://d
 
 <tr>
 <td width="180"><a href="https://runapi.co"><img src="assets/partners/logos/runapi.jpg" alt="RunAPI" width="150"></a></td>
-<td>本プロジェクトのスポンサーである RunAPI に感謝いたします！RunAPI は高効率で安定した AI モデル API ゲートウェイです。一つの API Key で、OpenAI、Claude、Gemini、DeepSeek、Grok など 150 種類以上の主要モデルにアクセス可能。料金は公式価格の最大 10%、安定性にも優れ、Claude Code や OpenClaw などのツールとシームレスに連携できます。CC Switch ユーザー限定特典：ご登録後にカスタマーサポートへご連絡いただくと、14 元の無料クレジットを進呈いたします。<a href="https://runapi.co">こちら</a>からご登録ください！</td>
+<td>本プロジェクトのスポンサーである RunAPI に感謝いたします！RunAPI は高効率で安定した AI モデル API ゲートウェイです。一つの API Key で、OpenAI、Claude、Gemini、DeepSeek、Grok など 150 種類以上の主要モデルにアクセス可能。料金は公式価格の最大 10%、安定性にも優れ、Claude Code や OpenClaw などのツールとシームレスに連携できます。CC Switch Fusion ユーザー限定特典：ご登録後にカスタマーサポートへご連絡いただくと、14 元の無料クレジットを進呈いたします。<a href="https://runapi.co">こちら</a>からご登録ください！</td>
 </tr>
 
 </table>
 
 </details>
 
-## CC Switch を選ぶ理由
+## CC Switch Fusion を選ぶ理由
 
 最新の AI コーディングは Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw などの CLI ツールに依存していますが、各ツールの設定形式はバラバラです。API プロバイダを切り替えるたびに JSON、TOML、`.env` ファイルを手動で編集する必要があり、複数ツール間で MCP や Skills を統一的に管理する手段もありません。
 
-**CC Switch** は、5 つの CLI ツールを 1 つのデスクトップアプリで一元管理できます。設定ファイルを手作業で編集する代わりに、ワンクリックでプロバイダをインポートし、瞬時に切り替えられるビジュアルインターフェースを提供します。50 以上の組み込みプリセット、統一 MCP・Skills 管理、システムトレイからの即時切り替え機能を搭載。すべてはアトミック書き込みによる信頼性の高い SQLite データベースに支えられており、設定の破損を防ぎます。
+**CC Switch Fusion** は、5 つの CLI ツールを 1 つのデスクトップアプリで一元管理できます。設定ファイルを手作業で編集する代わりに、ワンクリックでプロバイダをインポートし、瞬時に切り替えられるビジュアルインターフェースを提供します。50 以上の組み込みプリセット、統一 MCP・Skills 管理、システムトレイからの即時切り替え機能を搭載。すべてはアトミック書き込みによる信頼性の高い SQLite データベースに支えられており、設定の破損を防ぎます。
 
 - **1 つのアプリで 5 つの CLI ツール** -- Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw を単一インターフェースで管理
 - **手動編集は不要** -- AWS Bedrock、NVIDIA NIM、コミュニティリレーなど 50 以上のプロバイダプリセットを内蔵。選んで切り替えるだけ
@@ -210,9 +210,9 @@ CC Switch ユーザー限定特典： 専用リンクからご<a href="https://d
 ## よくある質問
 
 <details>
-<summary><strong>CC Switch はどの AI CLI ツールに対応していますか？</strong></summary>
+<summary><strong>CC Switch Fusion はどの AI CLI ツールに対応していますか？</strong></summary>
 
-CC Switch は **Claude Code**、**Codex**、**Gemini CLI**、**OpenCode**、**OpenClaw** の 5 つのツールに対応しています。各ツールに専用のプロバイダプリセットと設定管理が用意されています。
+CC Switch Fusion は **Claude Code**、**Codex**、**Gemini CLI**、**OpenCode**、**OpenClaw** の 5 つのツールに対応しています。各ツールに専用のプロバイダプリセットと設定管理が用意されています。
 
 </details>
 
@@ -226,21 +226,21 @@ CC Switch は **Claude Code**、**Codex**、**Gemini CLI**、**OpenCode**、**Op
 <details>
 <summary><strong>プロバイダを切り替えた後、プラグイン設定が消えてしまいました。どうすればよいですか？</strong></summary>
 
-CC Switch には「共有設定スニペット」機能があり、APIキーやエンドポイント以外の共通データをプロバイダ間で引き継ぐことができます。「プロバイダ編集」→「共有設定パネル」→「現在のプロバイダから抽出」をクリックして、すべての共通データを保存してください。新しいプロバイダを作成する際に「共有設定を書き込む」にチェック（デフォルトで有効）を入れれば、プラグインなどのデータが新しいプロバイダ設定に含まれます。すべての設定項目は、アプリ初回起動時にインポートされたデフォルトプロバイダに保存されており、失われることはありません。
+CC Switch Fusion には「共有設定スニペット」機能があり、APIキーやエンドポイント以外の共通データをプロバイダ間で引き継ぐことができます。「プロバイダ編集」→「共有設定パネル」→「現在のプロバイダから抽出」をクリックして、すべての共通データを保存してください。新しいプロバイダを作成する際に「共有設定を書き込む」にチェック（デフォルトで有効）を入れれば、プラグインなどのデータが新しいプロバイダ設定に含まれます。すべての設定項目は、アプリ初回起動時にインポートされたデフォルトプロバイダに保存されており、失われることはありません。
 
 </details>
 
 <details>
 <summary><strong>macOS のインストールについて</strong></summary>
 
-CC Switch の macOS 版は Apple によるコード署名と公証が完了しています。直接ダウンロードしてインストールできます — 追加の手順は不要です。`.dmg` インストーラの使用を推奨します。
+CC Switch Fusion の macOS 版は Apple によるコード署名と公証が完了しています。直接ダウンロードしてインストールできます — 追加の手順は不要です。`.dmg` インストーラの使用を推奨します。
 
 </details>
 
 <details>
 <summary><strong>現在アクティブなプロバイダを削除できないのはなぜですか？</strong></summary>
 
-CC Switch は「最小限の介入」という設計原則に従っています。アプリをアンインストールしても、CLI ツールは正常に動作し続けます。すべての設定を削除すると対応する CLI ツールが使用できなくなるため、システムは常にアクティブな設定を 1 つ保持します。特定の CLI ツールをあまり使用しない場合は、設定で非表示にできます。公式ログインに戻す方法は、次の質問をご覧ください。
+CC Switch Fusion は「最小限の介入」という設計原則に従っています。アプリをアンインストールしても、CLI ツールは正常に動作し続けます。すべての設定を削除すると対応する CLI ツールが使用できなくなるため、システムは常にアクティブな設定を 1 つ保持します。特定の CLI ツールをあまり使用しない場合は、設定で非表示にできます。公式ログインに戻す方法は、次の質問をご覧ください。
 
 </details>
 
@@ -528,7 +528,7 @@ PR を送る前に以下をご確認ください：
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=farion1231/cc-switch&type=Date)](https://www.star-history.com/#farion1231/cc-switch&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=deanli1982/CC-Switch-Fusion&type=Date)](https://www.star-history.com/#deanli1982/CC-Switch-Fusion&Date)
 
 ## ライセンス
 
