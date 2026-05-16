@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CC-Switch Fusion Model Mapping — 用户手册</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #a371f7;
+    --green: #3fb950;
+    --orange: #d29922;
+    --blue: #58a6ff;
+    --red: #f85149;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  h1 { font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: .5rem; margin-bottom: 1rem; }
+  h2 { font-size: 1.4rem; margin-top: 2rem; margin-bottom: .75rem; color: var(--accent); }
+  h3 { font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: .5rem; }
+  p, li { color: var(--text); }
+  ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+  li { margin-bottom: .25rem; }
+  .muted { color: var(--muted); font-size: .9rem; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: .5rem .75rem;
+    text-align: left;
+    font-size: .9rem;
+  }
+  th { background: var(--card); }
+  code {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: .1rem .35rem;
+    font-size: .85em;
+  }
+  pre {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-x: auto;
+    font-size: .85rem;
+    margin: .75rem 0;
+  }
+  .flow {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    flex-wrap: wrap;
+    font-size: .85rem;
+    padding: .75rem;
+    background: var(--card);
+    border-radius: 8px;
+    margin: .75rem 0;
+  }
+  .flow span { padding: .3rem .6rem; border-radius: 4px; }
+  .flow .req { background: #1a3a5c; color: var(--blue); }
+  .flow .cls  { background: #2d1a4a; color: var(--accent); }
+  .flow .map  { background: #1a3c1a; color: var(--green); }
+  .flow .fwd  { background: #3a2a1a; color: var(--orange); }
+  .flow .arr  { color: var(--muted); font-weight: bold; }
+  .badge-enable { color: var(--green); }
+  .badge-disable { color: var(--muted); }
+  .toc a { color: var(--blue); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .toc li { margin-bottom: .35rem; }
+  .tag {
+    display: inline-block;
+    padding: .15rem .5rem;
+    border-radius: 12px;
+    font-size: .75rem;
+    font-weight: 600;
+  }
+  .tag-v3 { background: #2d1a4a; color: var(--accent); }
+  .tag-new { background: #1a3c1a; color: var(--green); }
+</style>
+</head>
+<body>
+
+<h1>CC-Switch — Fusion Model Mapping <span class="tag tag-v3">v3.14+</span></h1>
+<p class="muted">跨供应商模型融合路由 — 让不同 Claude 模型类型自动分流到不同厂商 API</p>
+
+<nav class="card toc">
+<h3>目录</h3>
+<ol>
+  <li><a href="#overview">功能概述</a></li>
+  <li><a href="#where">入口位置</a></li>
+  <li><a href="#enable">开启融合路由</a></li>
+  <li><a href="#config">配置模型映射</a></li>
+  <li><a href="#how">工作原理</a></li>
+  <li><a href="#example">实战示例</a></li>
+  <li><a href="#troubleshoot">常见问题</a></li>
+  <li><a href="#fields">JSON 字段参考</a></li>
+</ol>
+</nav>
+
+<!-- ============================================================ -->
+<h2 id="overview">1. 功能概述</h2>
+
+<div class="card">
+<p><strong>Fusion Model Mapping</strong>（融合模型映射）是 CC-Switch 的跨供应商路由功能。它允许你将不同 Claude 模型类型自动路由到不同的 API 供应商，无需手动切换。</p>
+
+<h3>解决什么问题？</h3>
+<ul>
+  <li><strong>痛点</strong>: DeepSeek V4 不支持多模态，但 Qwen3.6-Plus 支持。以前只能全局切换一个供应商，来回操作繁琐。</li>
+  <li><strong>方案</strong>: 配置好映射后，Claude Code 调用 <code>claude-sonnet</code> 时自动走 Qwen（多模态），调用 <code>claude-haiku</code> 时走 DeepSeek（低延迟），全程自动。</li>
+</ul>
+
+<h3>核心能力</h3>
+<table>
+  <tr><th>能力</th><th>说明</th></tr>
+  <tr><td>模型类型识别</td><td>根据请求模型名自动分类（Haiku / Sonnet / Opus / Default）</td></tr>
+  <tr><td>跨供应商路由</td><td>不同类型可指向不同的厂商 API</td></tr>
+  <tr><td>模型名映射</td><td>将 Claude 内部的模型名替换为目标厂商的实际模型名</td></tr>
+  <tr><td>一键开关</td><td>关闭后恢复原有行为，完全向后兼容</td></tr>
+</table>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="where">2. 入口位置</h2>
+
+<div class="card">
+<p><strong>路径</strong>: CC-Switch 主界面 → ⚙ <strong>Settings</strong> → <strong>Fusion</strong> 标签页</p>
+<p>Fusion 标签页位于 <strong>Auth</strong> 和 <strong>Advanced</strong> 之间，标签栏第 4 个位置。</p>
+<pre>
+┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+│ General  │ Routing  │  Auth    │ <span style="color:var(--accent)">Fusion</span>  │ Advanced │  Usage   │  About   │
+└──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+</pre>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="enable">3. 开启融合路由</h2>
+
+<div class="card">
+<p>进入 Fusion 页面后，顶部有一个总开关：</p>
+<ul>
+  <li><span class="badge-enable">● ON</span> — 融合路由生效，配置的映射规则对请求起作用</li>
+  <li><span class="badge-disable">● OFF</span> — 融合路由关闭，所有请求走当前选中的供应商（默认行为）</li>
+</ul>
+<p class="muted">开启后，页面底部会显示绿色脉冲指示灯 + "Fusion routing is active" 状态提示。</p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="config">4. 配置模型映射</h2>
+
+<div class="card">
+<p>页面中部有 <strong>4 个模型类型卡片</strong>，每个卡片对应一种 Claude 模型分类：</p>
+
+<table>
+  <tr><th>卡片</th><th>匹配规则</th><th>何时生效</th></tr>
+  <tr><td>⚡ <strong>Default / Main</strong></td><td>不匹配以下任何类型的兜底</td><td>Claude Code 使用未知/自定义模型时</td></tr>
+  <tr><td>🌸 <strong>Haiku</strong></td><td>模型名含 <code>haiku</code>（大小写不敏感）</td><td>Claude Code 调用 <code>claude-haiku-4-5</code> 时</td></tr>
+  <tr><td>🎵 <strong>Sonnet</strong></td><td>模型名含 <code>sonnet</code>（大小写不敏感）</td><td>Claude Code 调用 <code>claude-sonnet-4-5</code> 时</td></tr>
+  <tr><td>🎭 <strong>Opus</strong></td><td>模型名含 <code>opus</code>（大小写不敏感）</td><td>Claude Code 调用 <code>claude-opus-4-5</code> 时</td></tr>
+</table>
+
+<h3>每个卡片包含两个配置项：</h3>
+<ol>
+  <li><strong>Target Provider</strong> — 目标供应商（下拉框，从已配置的供应商中选择）</li>
+  <li><strong>Target Model</strong> — 目标模型名（文本输入，填入该供应商支持的模型名称）</li>
+</ol>
+
+<p class="muted">配置完成后自动保存。未填写的类型不会被路由（仍走当前供应商）。</p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="how">5. 工作原理</h2>
+
+<div class="card">
+<p>当融合路由开启后，每次 Claude Code 请求经过 CC-Switch 代理时：</p>
+
+<div class="flow">
+  <span class="req">① 收到请求<br>model: claude-sonnet-4-5</span>
+  <span class="arr">→</span>
+  <span class="cls">② 模型分类<br>检测到 "sonnet"</span>
+  <span class="arr">→</span>
+  <span class="map">③ 查找映射<br>{ providerId: "qwen", modelName: "qwen3.6-plus" }</span>
+  <span class="arr">→</span>
+  <span class="fwd">④ 转发请求<br>body.model = "qwen3.6-plus"<br>→ Qwen API 端点</span>
+</div>
+
+<h3>关键特性</h3>
+<ul>
+  <li><strong>优先级</strong>: 融合路由 > Claude Desktop 模型映射 > Provider 内置模型映射</li>
+  <li><strong>分类规则</strong>: 大小写不敏感。Haiku 优先于 Sonnet/Opus（模型名同时含多个关键词时先匹配 Haiku）</li>
+  <li><strong>未匹配时</strong>: 该类型未配置映射时，请求正常走当前选中供应商</li>
+  <li><strong>API 格式</strong>: 目标供应商的 <code>apiFormat</code>（如 anthropic / openai_chat / openai_responses / gemini_native）会被正确应用，CC-Switch 自动完成格式转换</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="example">6. 实战示例</h2>
+
+<div class="card">
+<h3>场景：同时使用 DeepSeek V4 + Qwen3.6-Plus 实现多模态支持</h3>
+
+<p><strong>前提</strong>: 已将 DeepSeek 和 Qwen 分别配置为 CC-Switch 中的供应商（Settings → Routing 标签页可添加）。</p>
+
+<p><strong>配置</strong>:</p>
+<table>
+  <tr><th>模型类型</th><th>Target Provider</th><th>Target Model</th></tr>
+  <tr><td>Default / Main</td><td>DeepSeek</td><td><code>deepseek-v4-pro[1m]</code></td></tr>
+  <tr><td>Haiku</td><td>DeepSeek</td><td><code>deepseek-v4-pro[1m]</code></td></tr>
+  <tr><td>Sonnet</td><td>Qwen</td><td><code>qwen3.6-plus</code></td></tr>
+  <tr><td>Opus</td><td>DeepSeek</td><td><code>deepseek-v4-pro[1m]</code></td></tr>
+</table>
+
+<p><strong>效果</strong>:</p>
+<table>
+  <tr><th>Claude Code 操作</th><th>实际路由</th></tr>
+  <tr><td>普通对话 (haiku)</td><td>→ DeepSeek (deepseek-v4-pro[1m])</td></tr>
+  <tr><td>图片识别 (sonnet)</td><td>→ Qwen (qwen3.6-plus) <span class="tag tag-new">多模态</span></td></tr>
+  <tr><td>复杂推理 (opus)</td><td>→ DeepSeek (deepseek-v4-pro[1m])</td></tr>
+</table>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="troubleshoot">7. 常见问题</h2>
+
+<div class="card">
+
+<h3>Q: 开启后请求仍然走原来的供应商？</h3>
+<p>检查：1) 开关是否为 ON；2) 模型名是否匹配（大小写不敏感，含 haiku/sonnet/opus）；3) 目标供应商 ID 是否存在。</p>
+
+<h3>Q: 融合路由和 Provider 内置的模型映射冲突吗？</h3>
+<p>不冲突。融合路由优先级最高。融合生效时会直接跳过 Provider 内置的模型映射。</p>
+
+<h3>Q: 融合路由是否支持故障转移？</h3>
+<p>暂不支持。融合路由直接将请求发给目标供应商，不经过故障转移队列。如需要故障转移，请在目标供应商的 Proxy 配置中开启。</p>
+
+<h3>Q: 日志中如何确认融合路由是否生效？</h3>
+<p>代理日志会显示 <code>[Claude] Fusion: claude-sonnet-4-5 (Sonnet) → provider=Qwen, model=qwen3.6-plus</code>。</p>
+
+<h3>Q: 配置保存在哪里？</h3>
+<p>保存在 <code>~/.cc-switch/settings.json</code> 中的 <code>fusionModelMapping</code> 字段。</p>
+
+</div>
+
+<!-- ============================================================ -->
+<h2 id="fields">8. JSON 字段参考</h2>
+
+<div class="card">
+<p>配置在 <code>~/.cc-switch/settings.json</code> 中的结构：</p>
+<pre>{
+  "fusionModelMapping": {
+    "enabled": true,
+    "haiku": {
+      "providerId": "deepseek-provider-id",
+      "modelName": "deepseek-v4-pro[1m]"
+    },
+    "sonnet": {
+      "providerId": "qwen-provider-id",
+      "modelName": "qwen3.6-plus"
+    },
+    "opus": {
+      "providerId": "deepseek-provider-id",
+      "modelName": "deepseek-v4-pro[1m]"
+    },
+    "default": {
+      "providerId": "deepseek-provider-id",
+      "modelName": "deepseek-v4-pro[1m]"
+    }
+  }
+}</pre>
+
+<table>
+  <tr><th>字段</th><th>类型</th><th>必填</th><th>说明</th></tr>
+  <tr><td><code>enabled</code></td><td>boolean</td><td>是</td><td>总开关，false 时所有映射不生效</td></tr>
+  <tr><td><code>haiku</code></td><td>object</td><td>否</td><td>Haiku 模型类型的映射，含 <code>providerId</code> + <code>modelName</code></td></tr>
+  <tr><td><code>sonnet</code></td><td>object</td><td>否</td><td>Sonnet 模型类型的映射</td></tr>
+  <tr><td><code>opus</code></td><td>object</td><td>否</td><td>Opus 模型类型的映射</td></tr>
+  <tr><td><code>default</code></td><td>object</td><td>否</td><td>兜底映射，不匹配以上类型时使用</td></tr>
+  <tr><td><code>providerId</code></td><td>string</td><td>是</td><td>目标供应商在 CC-Switch 中的 ID（UUID 字符串）</td></tr>
+  <tr><td><code>modelName</code></td><td>string</td><td>是</td><td>目标供应商对应的模型名</td></tr>
+</table>
+
+<p class="muted">修改 JSON 后需重启 CC-Switch 生效。推荐使用 UI 界面配置以避免 ID 拼写错误。</p>
+</div>
+
+<hr style="border-color:var(--border); margin: 2rem 0 1rem;">
+<p class="muted" style="text-align:center">CC-Switch v3.14.1 — Fusion Model Mapping — 2026-05-13</p>
+
+</body>
+</html>
